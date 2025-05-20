@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  chatmetdewet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_KEY: ${REACT_APP_API_KEY}
+        REACT_APP_WORKSPACE_SLUG: ${REACT_APP_WORKSPACE_SLUG}
+        REACT_APP_API_URL: ${REACT_APP_API_URL}
+    ports:
+      - "3000:3000"
+    container_name: cmdw
+    env_file:
+      - .env

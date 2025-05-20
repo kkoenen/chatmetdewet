@@ -1,0 +1,9 @@
+# Secrets are stored in the .env file
+.env
+
+# Don't leak node_modules garbage
+node_modules
+
+# Don't include build artifacts
+build
+

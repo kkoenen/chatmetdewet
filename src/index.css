@@ -1,0 +1,37 @@
+/* Volledige hoogte, geen scroll */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Alles in één kolom */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+/* Logo bovenaan */
+.logo-container {
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+/* Root (React-app) neemt rest van scherm in beslag */
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

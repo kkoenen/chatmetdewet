@@ -1,0 +1,31 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Logo moet uitgelijnd staan met de chat */
+.logo-container {
+  padding: 10px;
+  padding-bottom: 0;
+  background-color: #fff;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+/* Laat React-app het hele scherm gebruiken */
+#root {
+  flex: 1;
+  overflow: hidden;
+}
