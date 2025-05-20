@@ -1,9 +1,31 @@
-# Secrets are stored in the .env file
+# Node.js dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment variables
 .env
 
-# Don't leak node_modules garbage
-node_modules
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Don't include build artifacts
-build
+# OS-specific
+.DS_Store
+Thumbs.db
 
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Docker
+*.local
+docker-compose.override.yml
+
+# misc
+*.log
