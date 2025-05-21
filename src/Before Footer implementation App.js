@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ChatWindow from "./ChatWindow";
 import ChatInput from "./ChatInput";
 import "./App.css";
-import FooterDisclaimer from "./FooterDisclaimer";
+
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -71,7 +71,6 @@ function App() {
         onInputChange={setInputText}
         onSend={handleSend}
       />
-      <FooterDisclaimer />
     </div>
   );
 }
