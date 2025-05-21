@@ -19,6 +19,23 @@ function App() {
     setMessages(prev => [...prev, { sender: "system", text }]);
   };
 
+  const addToggleSystemMessage = (text) => {
+    setMessages((prev) => {
+      const last = prev[prev.length - 1];
+      const shouldReplace =
+        last?.sender === "system" && last?.meta === "mode-toggle";
+
+      if (shouldReplace) {
+        return [
+          ...prev.slice(0, -1),
+          { sender: "system", text, meta: "mode-toggle" },
+        ];
+      } else {
+        return [...prev, { sender: "system", text, meta: "mode-toggle" }];
+      }
+    });
+  };
+
   const handleSend = async () => {
     const messageToSend = inputText.trim();
     if (messageToSend === "") return;
@@ -70,7 +87,7 @@ function App() {
                   ? "Chat-modus: meer vrijheid, minder nauwkeurige antwoorden. Geschikt voor open gesprekken."
                   : "Wet-modus: antwoorden zijn beperkt tot de context van de ingeladen wetgeving. Geschikt voor gerichte vragen en gesprekken over de Nederlandse wet.";
 
-              addSystemMessage(message);
+              addToggleSystemMessage(message);
             }}
           />
           <span className="slider round"></span>
