@@ -3,6 +3,15 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Forceer redirect van www naar zonder www
+app.use((req, res, next) => {
+  if (req.headers.host && req.headers.host.startsWith("www.")) {
+    const newHost = req.headers.host.slice(4); // verwijder 'www.'
+    return res.redirect(301, `https://${newHost}${req.url}`);
+  }
+  next();
+});
+
 // Parse JSON bodies
 app.use(express.json());
 

@@ -53,6 +53,20 @@
   font-size: 1em;
 }
 
+/* Chat message styling for 'system' messages */
+.message.system {
+  background-color: #FEFEFE;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  align-self: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  max-width: 70%;
+  margin: 8px auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
 .send-button {
   margin-left: 10px;
   padding: 10px 16px;

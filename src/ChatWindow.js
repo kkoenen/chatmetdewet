@@ -5,15 +5,26 @@ function ChatWindow({ messages }) {
   return (
     <div className="chat-window">
       {messages.map((msg, index) => {
-        const className = "message " + (msg.sender === "user" ? "user-message" : "law-message");
+        let className = "message";
+
+        if (msg.sender === "user") {
+          className += " user-message";
+        } else if (msg.sender === "law") {
+          className += " law-message";
+        } else if (msg.sender === "system") {
+          className += " system";
+        }
+
+        const content =
+          msg.sender === "law" ? (
+            <ReactMarkdown>{msg.text}</ReactMarkdown>
+          ) : (
+            msg.text
+          );
 
         return (
           <div key={index} className={className}>
-            {msg.sender === "law" ? (
-              <ReactMarkdown>{msg.text}</ReactMarkdown>
-            ) : (
-              msg.text
-            )}
+            {content}
           </div>
         );
       })}

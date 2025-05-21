@@ -15,6 +15,10 @@ function App() {
   const WORKSPACE_SLUG = process.env.REACT_APP_WORKSPACE_SLUG;
   const API_URL = process.env.REACT_APP_API_URL;
 
+  const addSystemMessage = (text) => {
+    setMessages(prev => [...prev, { sender: "system", text }]);
+  };
+
   const handleSend = async () => {
     const messageToSend = inputText.trim();
     if (messageToSend === "") return;
@@ -57,7 +61,17 @@ function App() {
           <input
             type="checkbox"
             checked={mode === 'wet'}
-            onChange={() => setMode(mode === 'chat' ? 'wet' : 'chat')}
+            onChange={() => {
+              const newMode = mode === 'chat' ? 'wet' : 'chat';
+              setMode(newMode);
+
+              const message =
+                newMode === 'chat'
+                  ? "Chat-modus: meer vrijheid, minder nauwkeurige antwoorden. Geschikt voor open gesprekken."
+                  : "Wet-modus: antwoorden zijn beperkt tot de context van de ingeladen wetgeving. Geschikt voor gerichte vragen en gesprekken over de Nederlandse wet.";
+
+              addSystemMessage(message);
+            }}
           />
           <span className="slider round"></span>
         </label>
