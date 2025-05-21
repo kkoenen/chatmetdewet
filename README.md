@@ -27,9 +27,11 @@ De app is gebouwd in React en gebruikt AnythingLLM als backend via een externe A
 
 1. Clone de repo:
 
-```bash
-git clone https://github.com/<jouw-gebruikersnaam>/chatmetdewet.git
-cd chatmetdewet```
+```
+bash
+git clone https://github.com/kkoenen/chatmetdewet.git
+cd chatmetdewet
+```
 
 2. Maak een .env bestand op basis van het voorbeeld:
 
@@ -45,20 +47,16 @@ Gefeliciteerd, de app draait nu op http://localhost:3000
 
 Variabelen (.env)
 
-Naam						Beschrijving
-REACT_APP_API_KEY			API key voor AnythingLLM
-REACT_APP_WORKSPACE_SLUG	Slug van je workspace
-REACT_APP_API_URL			URL van de AnythingLLM endpoint
-
-Zelf testen?
-Gebruik Postman om zelf requests te sturen naar AnythingLLM. Vergeet niet de juiste mode mee te geven:
-
-"chat" voor gewone AI
-"query" voor wet-onderbouwde antwoorden
+```
+Naam                        Beschrijving
+REACT_APP_API_KEY           API key voor AnythingLLM
+REACT_APP_WORKSPACE_SLUG    Slug van je workspace
+REACT_APP_API_URL           URL van je AnythingLLM endpoint
+```
 
 Licentie
 MIT – gebruik vrij, maar op eigen risico.
 
-🤝 Contact
+## 🤝 Contact
 Gebouwd door Kees Koenen (linkedin.com/in/kkoenen) – met ❤️ voor open source.
 
