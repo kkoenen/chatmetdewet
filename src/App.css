@@ -29,7 +29,7 @@
   padding: 10px;
   font-size: 1em;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 .message {
@@ -37,6 +37,7 @@
   margin: 4px 0;
   border-radius: 5px;
   max-width: 80%;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   word-break: break-word;
 }
 
@@ -74,7 +75,7 @@
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
