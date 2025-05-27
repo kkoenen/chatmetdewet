@@ -3,6 +3,9 @@ import ChatWindow from "./ChatWindow";
 import ChatInput from "./ChatInput";
 import "./App.css";
 import FooterDisclaimer from "./FooterDisclaimer";
+import MarkdownIt from 'markdown-it';
+import hljs from 'highlight.js';
+import footnote from 'markdown-it-footnote';
 
 function App() {
   const [messages, setMessages] = useState([]);

@@ -1,3 +1,6 @@
+/* Syntax highlighting (light theme) */
+@import "highlight.js/styles/github.css";
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -37,7 +40,7 @@
   margin: 4px 0;
   border-radius: 5px;
   max-width: 80%;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   word-break: break-word;
 }
 
@@ -52,11 +55,40 @@
   white-space: pre-wrap;
   line-height: 1.5;
   font-size: 1em;
+  white-space: normal;
+}
+
+/* Tabelstijl */
+
+.law-message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.law-message th,
+.law-message td {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  text-align: left;
+}
+
+/* Voetnoten */
+.law-message sup {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.law-message .footnotes {
+  font-size: 0.85em;
+  margin-top: 1em;
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
 }
 
 /* Chat message styling for 'system' messages */
 .message.system {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   color: #333;
   font-size: 14px;
   text-align: center;
@@ -81,21 +113,29 @@
 
 .law-message ul,
 .law-message ol {
-  padding-left: 1.5em;
-  margin: 0.5em 0;
+
+  padding-left: 1.25em;
+  margin: 0 0 1em;
 }
 
 .law-message strong,
 .law-message b {
   font-weight: bold;
 }
+
 .law-message em,
 .law-message i {
   font-style: italic;
 }
 
 .law-message li {
-  margin-bottom: 0.3em;
+  margin: 0 0 0.5em;
+  line-height: 1.5;
+}
+
+.law-message li p {
+  margin: 0 0 0.5em;
+  line-height: 1.5;
 }
 
 .law-message pre {
@@ -105,8 +145,8 @@
   overflow-x: auto;
   font-family: monospace;
   margin: 10px 0;
-  white-space: pre-wrap;     /* ✅ zorgt voor wrapping */
-  word-break: break-word;    /* ✅ breekt woorden indien nodig */
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .law-message code {
@@ -114,7 +154,7 @@
   padding: 2px 4px;
   border-radius: 4px;
   font-family: monospace;
-  word-break: break-word;    /* ook daar, voor de zekerheid */
+  word-break: break-word;
 }
 
 .mode-toggle {
@@ -170,7 +210,7 @@
 
 /* When checked */
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:checked + .slider:before {
@@ -182,4 +222,3 @@ input:checked + .slider:before {
   min-width: 90px;
   text-align: left;
 }
-

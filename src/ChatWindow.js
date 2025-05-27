@@ -1,5 +1,6 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+import md from "./lib/markdown"; // MarkdownIt configuratie
+import { sanitizeMarkdown } from "./lib/sanitize";
 
 function ChatWindow({ messages }) {
   return (
@@ -15,12 +16,21 @@ function ChatWindow({ messages }) {
           className += " system";
         }
 
-        const content =
-          msg.sender === "law" ? (
-            <ReactMarkdown>{msg.text}</ReactMarkdown>
-          ) : (
-            msg.text
+        // Bepaal de inhoud van het bericht
+        let content;
+        if (msg.sender === "law") {
+          console.log("RAW MESSAGE TEXT:", msg.text);
+          const cleanedText = sanitizeMarkdown(msg.text);
+          const renderedMarkdown = md.render(cleanedText);
+          content = (
+            <div
+              className="markdown"
+              dangerouslySetInnerHTML={{ __html: renderedMarkdown }}
+            />
           );
+        } else {
+          content = <div>{msg.text}</div>;
+        }
 
         return (
           <div key={index} className={className}>
