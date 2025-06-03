@@ -66,11 +66,11 @@ function App() {
       if (data.textResponse) {
         setMessages(prev => [...prev, { sender: "law", text: data.textResponse }]);
       } else {
-        setMessages(prev => [...prev, { sender: "law", text: "⚠️ Geen antwoord ontvangen van de wet." }]);
+        setMessages(prev => [...prev, { sender: "law", text: '⚠️ Geen antwoord ontvangen van de wet, neem contact op met Kees Koenen (https://linkedin.com/in/kkoenen) voor meer informatie over deze site.' }]);
       }
     } catch (error) {
       console.error("Fout bij verzenden:", error);
-      setMessages(prev => [...prev, { sender: "law", text: "⚠️ Er ging iets mis met de verbinding." }]);
+      setMessages(prev => [...prev, { sender: "law", text: '⚠️ Geen antwoord ontvangen van backend, neem contact op met Kees Koenen (https://linkedin.com/in/kkoenen) voor meer informatie over deze site.' }]);
     }
   };
 
